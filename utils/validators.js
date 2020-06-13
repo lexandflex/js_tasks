@@ -1,54 +1,32 @@
-
 function isTwoDimensionalArrayConsistOfNumbers (arr) {
-  try {
-    if (!Array.isArray(arr)) throw new Error('Array is expected')
-    arr.map(v => {
-      if (!Array.isArray(v)) throw new Error('The array must consist of arrays')
-      if (v.some(v => typeof v !== 'number')) {
-        throw new Error('Nested arrays must consist of numbers')
-      }
-    })
-  } catch (e) {
-    return e
-  }
+  if (Array.isArray(arr)) {
+    return !arr
+      .some(item => !Array.isArray(item) || item.some(subItem => typeof subItem !== 'number'))
+  } else return false
 }
 
 function isArrayConsistOfNumbers (arr) {
-  try {
-    if (!Array.isArray(arr)) throw new Error('Array is expected')
-    arr.map(v => {
-      if (typeof v !== 'number') throw new Error('The array must consist of numbers')
-    })
-  } catch (e) {
-    return e
-  }
+  if (Array.isArray(arr)) {
+    return !arr.some(item => typeof item !== 'number')
+  } else return false
 }
 
 function isAllArgsNumberType (...args) {
-  try {
-    if (args.some(v => typeof v !== 'number')) {
-      throw new Error('Incorrect data type: number is expected')
-    }
-  } catch (e) {
-    return e
-  }
+  return !args.some(value => typeof value !== 'number')
 }
 
 function isAllArgsStringType (...args) {
-  try {
-    if (args.some(v => typeof v !== 'string')) {
-      throw new Error('Incorrect data type: string is expected ')
-    }
-  } catch (e) {
-    return e
-  }
+  return !args.some(value => typeof value !== 'string')
 }
 
-function isArray (arr) {
-  if (!Array.isArray(arr)) return new Error('Array is expected')
+function isAllArgsFunctions (...args) {
+  return !args.some(value => typeof value !== 'function')
 }
 
 export {
-  isTwoDimensionalArrayConsistOfNumbers, isArrayConsistOfNumbers, isAllArgsNumberType,
-  isAllArgsStringType, isArray,
+  isTwoDimensionalArrayConsistOfNumbers,
+  isArrayConsistOfNumbers,
+  isAllArgsNumberType,
+  isAllArgsStringType,
+  isAllArgsFunctions,
 }

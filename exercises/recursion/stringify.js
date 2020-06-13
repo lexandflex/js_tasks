@@ -7,11 +7,7 @@ export class Node {
 }
 
 export function stringify (list) {
-  try {
-    if (!(list instanceof Node)) throw new Error('Object of the Node class is expected')
-    if (list.next === null) return `${list.data} -> ${list.next}`
-    return `${list.data} -> ${stringify(list.next)}`
-  } catch (e) {
-    return e
-  }
+  if (!(list instanceof Node)) return new Error('Object of the Node class is expected')
+  if (list.next === null) return `${list.data} -> ${list.next}`
+  return `${list.data} -> ${stringify(list.next)}`
 }

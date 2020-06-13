@@ -2,12 +2,12 @@ import { isAllArgsStringType } from '../../utils/validators'
 
 // Replace letters in their positions
 export function replaceWithAlphPositions (text) {
-  const checkTypes = isAllArgsStringType(text)
-  if (typeof checkTypes === 'object') return checkTypes
-  return text
-    .toLowerCase()
-    .split('')
-    .filter(symb => symb >= 'a' && symb <= 'z')
-    .map(v => v.charCodeAt() - 96)
-    .join(' ')
+  if (isAllArgsStringType(text)) {
+    return text
+      .toLowerCase()
+      .split('')
+      .filter(symb => symb >= 'a' && symb <= 'z')
+      .map(value => value.charCodeAt() - 96)
+      .join(' ')
+  } else return new Error('All args should be a string type')
 }

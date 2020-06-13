@@ -1,8 +1,8 @@
-import { isArrayConsistOfNumbers } from '../../utils/validators'
+import { isTwoDimensionalArrayConsistOfNumbers } from '../../utils/validators'
 
 // Diagonal matrix sum
 export function diagonalSum (array) {
-  const arrayCheck = isArrayConsistOfNumbers(array)
-  if (typeof arrayCheck === 'object') return arrayCheck
-  return array.reduce((acc, v, i) => acc + v[i], 0)
+  if (isTwoDimensionalArrayConsistOfNumbers(array)) {
+    return array.reduce((acc, value, index) => acc + value[index], 0)
+  } else return new Error('Two dimensional arrays should consist of numbers')
 }

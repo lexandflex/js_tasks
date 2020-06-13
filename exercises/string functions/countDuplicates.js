@@ -2,16 +2,12 @@ import { isAllArgsStringType } from '../../utils/validators'
 
 // Duplicates counter
 export function countDuplicates (text) {
-  const checkTypes = isAllArgsStringType(text)
-  if (typeof checkTypes === 'object') return checkTypes
-  const uniqValues = []
-  const repeatValues = []
-  text
-    .toLowerCase()
-    .split('')
-    .map(v => {
-      if (!uniqValues.includes(v)) uniqValues.push(v)
-      else if (!repeatValues.includes(v)) repeatValues.push(v)
-    })
-  return repeatValues.length
+  if (isAllArgsStringType(text)) {
+    return text
+      .toLowerCase()
+      .split('')
+      .filter((value, index, arr) => {
+        return arr.indexOf(value) !== index && arr.lastIndexOf(value) === index
+      }).length
+  } else return new Error('All args should be a string type')
 }

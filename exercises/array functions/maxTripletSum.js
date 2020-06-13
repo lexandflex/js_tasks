@@ -2,13 +2,13 @@ import { isArrayConsistOfNumbers } from '../../utils/validators'
 
 // Three maximum values sum
 export function maxTripletSum (arr) {
-  const arrayCheck = isArrayConsistOfNumbers(arr)
-  if (typeof arrayCheck === 'object') return arrayCheck
-  const result = Array(3).fill(0)
-  result.map((v, i) => {
-    const maxEl = Math.max.apply(null, arr)
-    result[i] = maxEl
-    arr = arr.filter(value => value !== maxEl)
-  })
-  return result.reduce((acc, v) => (acc += v), 0)
+  if (isArrayConsistOfNumbers(arr)) {
+    const result = Array.from({ length: 3 }, (value, index) => index + 1)
+    result.map((value, index) => {
+      const maxEl = Math.max.apply(null, arr)
+      result[index] = maxEl
+      arr = arr.filter(value => value !== maxEl)
+    })
+    return result.reduce((acc, v) => (acc += v), 0)
+  } else return new Error('Array should consist of numbers')
 }
