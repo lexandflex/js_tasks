@@ -1,0 +1,23 @@
+{
+    "include": ["exercises/**/*"],
+    "compilerOptions": {
+      "experimentalDecorators": true,
+      "target": "es6",
+      "outDir": "dist",
+      "skipLibCheck": true,
+      "esModuleInterop": true,
+      "module": "es6",
+      "moduleResolution": "node",
+      // "isolatedModules": true,
+      "resolveJsonModule": true,
+      "allowJs": true,
+      "allowSyntheticDefaultImports": true,
+      "noImplicitAny": false,
+      "noEmit": false,
+      "emitDecoratorMetadata": true
+    },
+    "exclude":[
+        "node_modules"
+    ]
+}
+  
