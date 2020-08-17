@@ -4,3 +4,7 @@ dist
 package-lock.json
 .nyc_output
 coverage
+10
+.eslintcache
+.eslintignore
+.prettierignore
