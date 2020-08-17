@@ -7,7 +7,7 @@ describe('Arrays average sum', () => {
   test('should be 3', () => {
     expect(sumAverage([[1, 2, 2, 1], [2, 2, 2, 1]])).toBe(3)
   })
-  test('', () => {
+  test('should be number', () => {
     expect(typeof sumAverage([[1, 2, 2, 1], [2, 2, 2, 1]])).toEqual('number')
   })
 })

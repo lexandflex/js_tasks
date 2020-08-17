@@ -1,13 +1,13 @@
 import { Singleton } from './singleton'
 
 describe('Singleton', () => {
-  const o1 = new Singleton()
-  const o2 = new Singleton()
+  const singleton1 = new Singleton()
+  const singleton2 = new Singleton()
   test('should be equal', () => {
-    expect(o1 === o2).toBe(true)
+    expect(singleton1 === singleton2).toBe(true)
   })
-  o1.name = 'Singleton'
+  singleton1.name = 'Singleton'
   test('should be equal', () => {
-    expect(o2.name).toBe('Singleton')
+    expect(singleton2.name).toBe('Singleton')
   })
 })

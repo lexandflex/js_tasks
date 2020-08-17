@@ -1,0 +1,4 @@
++ lint-staged@10.2.11
+added 42 packages from 37 contributors and audited 1308 packages in 13.349s
+found 8 vulnerabilities (6 low, 2 high)
+  run `npm audit fix` to fix them, or `npm audit` for details

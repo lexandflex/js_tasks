@@ -8,7 +8,7 @@ describe('Sum of the 3 biggest nums', () => {
   test('length should be 3', () => {
     expect(pattern(3).length).toBe(3)
   })
-  test('length should be 3', () => {
+  test('should be an array', () => {
     expect(Array.isArray(pattern(3))).toBe(true)
   })
 })

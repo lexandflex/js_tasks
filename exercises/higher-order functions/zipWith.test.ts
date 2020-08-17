@@ -1,6 +1,6 @@
 import { zipWith } from './zipWith'
 
-describe('Unpacking arguments', () => {
+describe('ZipWith', () => {
   test('should be [7, 12]', () => {
     expect(zipWith(Math.max, [1, 12], [7, 8])).toEqual([7, 12])
   })

@@ -1,15 +1,15 @@
 import { uniqueSum } from './uniqueSum'
 
-let check
+let testArr
 beforeEach(() => {
-  check = [3, 6, 3, 1, 2]
+  testArr = [3, 6, 3, 1, 2]
 })
 
 describe('Unique values sum', () => {
   test('should be number', () => {
-    expect((typeof uniqueSum(check))).toBe('number')
+    expect((typeof uniqueSum(testArr))).toBe('number')
   })
   test('should return 12', () => {
-    expect(uniqueSum(check)).toBe(12)
+    expect(uniqueSum(testArr)).toBe(12)
   })
 })

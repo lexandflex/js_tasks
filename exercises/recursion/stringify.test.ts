@@ -1,6 +1,6 @@
 import { Node, stringify } from './stringify'
 
-describe('Sequence sum', () => {
+describe('Linked list in a row', () => {
   test('Should return 1 -> 2 -> 3 -> null', () => {
     expect(stringify(new Node(1, new Node(2, new Node(3))))).toBe('1 -> 2 -> 3 -> null')
   })

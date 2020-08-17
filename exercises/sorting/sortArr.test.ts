@@ -1,8 +1,8 @@
 import { sortArr } from './sortArr'
 
-let arr: Array<Record<string, number>>
+let testArr: Array<Record<string, number>>
 beforeEach(() => {
-  arr = [
+  testArr = [
     { a: 1, b: 3 },
     { a: 3, b: 2 },
     { a: 2, b: 40 },
@@ -12,7 +12,7 @@ beforeEach(() => {
 
 describe('Sorted object list', () => {
   test('should be array', () => {
-    expect((Array.isArray(sortArr(arr, 'a')))).toBe(true)
+    expect((Array.isArray(sortArr(testArr, 'a')))).toBe(true)
   })
   test('should return result array', () => {
     const result: Array<Record<string, number>> = [
@@ -21,9 +21,9 @@ describe('Sorted object list', () => {
       { a: 2, b: 40 },
       { a: 1, b: 3 },
     ]
-    expect(sortArr(arr, 'a')).toStrictEqual(result)
+    expect(sortArr(testArr, 'a')).toStrictEqual(result)
   })
   test('should return the same array', () => {
-    expect(sortArr(arr, 'с')).toStrictEqual(arr)
+    expect(sortArr(testArr, 'с')).toStrictEqual(testArr)
   })
 })
